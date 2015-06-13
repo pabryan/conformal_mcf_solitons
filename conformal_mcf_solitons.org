@@ -28,6 +28,24 @@
 
 * Introduction
 * Notation and Preliminaries
+
+Let \(\ambient\) be a Riemannian manifold with Levi-Civita connection \(\ambientconx\), and let \(\conformalmap: \ambientspace \to \ambientspace\) a conformal diffeomorphism with
+\[
+\ambientconformalmetric = \pullback{\conformalmap} \ambientmetric = \conformalfactor \ambientmetric.
+\]
+We want to compare the geometry of \(\ambient\) with \((\conformalmap(\ambientspace), \ambientmetric)\). To this end we need to identify \(x\) with \(\conformalmap(x)\) which we achieve by comparing \(\ambient\) with \((\ambientspace, \ambientconformalmetric)\) at \(x\) since \(\conformalmap: (\ambientspace, \ambientconformalmetric) \to \ambient\) is an isometry.
+
+The dual conformal metric is
+\[
+\dualambientconformalmetric = \inverseconformalfactor \dualambientmetric.
+\]
+The conformal Levi-Civita connection is
+\[
+\ambientconformalconx_X Y = \ambientconx_X Y + X(\conformalexponent) Y + Y(\conformalexponent) X - \ambientmetric(X, Y) \grad \conformalexponent
+\]
+where the gradient is taken with respect to the original metric \(\ambientmetric\).
+
+
 * Solitons
 * Notes 							   :noexport:
 ** Comments from Ben
