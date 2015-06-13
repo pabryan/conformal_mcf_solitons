@@ -45,6 +45,39 @@ The conformal Levi-Civita connection is
 \]
 where the gradient is taken with respect to the original metric \(\ambientmetric\).
 
+Now let \(\submanifold \subset \ambientspace\) be an submanifold. We want to compare the geometry of \(\submanifold\) with \(\conformalmap(\submanifold)\). To this, we work instead with \(\submanifold\) using the metric \(\ambientconformalmetric\) since the isometry \(\conformalmap: (\ambientspace, \ambientconformalmetric) \to \ambient\) obviously takes \(\submanifold\) isometrically to \(\conformalmap(\submanifold)\). Let \(\metric\) be the metric on \(\submanifold\) induced by \(\ambientmetric\) with Levi-Civita connection \(\conx\) and let \(\conformalmetric\) be the metric induced by \(\ambientconformalmetric\) with Levi-Civita connection \(\conformalconx\). 
+
+Then we have
+\[
+\conformalmetric = \conformalfactor \metric, \quad \dualconformalmetric = \conformalfactor \dualmetric.
+\]
+
+For the connection, let \(X,Y\) be tangent to \(M\) and then taking the tangential component of \(\ambientconformalconx_X Y\) gives,
+\[
+\conformalconx_X Y = \conx_X Y + X(\conformalexponent) Y + Y(\conformalexponent) X - \metric(X, Y) \grad \conformalexponent
+\]
+where the gradient is now the gradient on \(M\), taken with respect to \(\metric\).
+
+Letting \(\nor\) be the unit normal vector to \(M\) with respect to \(\ambientmetric\), we see that for any vector \(X\) tangent to \(M\),
+\[
+\ambientconformalmetric (\nor, X) = \conformalfactor \ambientmetric(\nor, X) = 0
+\]
+so that \(\nor\) is normal to \(M\) with respect to \(\ambientconformalmetric\). It's length however is now \(\sqrtconformalfactor\) so that
+the conformal unit normal is
+\[
+\conformalnor = \inversesqrtconformalfactor \nor.
+\]
+This allows us to calculate the second fundamental form,
+\begin{align*}
+\conformalsff (X, Y) &= \ambientconformalmetric(\conformalconx_X Y, \conformalnor) = \conformalfactor \ambientmetric (\ambientconx_X Y + X(\conformalexponent) Y + Y(\conformalexponent) X - \ambientmetric(X, Y) \grad \conformalexponent, \inversesqrtconformalfactor \nor) \\
+&= \sqrtconformalfactor \ambientmetric (\ambientconx_X Y, \nor) - \sqrtconformalfactor \ambientmetric(X, Y) \ambientmetric (\grad \conformalexponent, \nor) \\
+&= \sqrtconformalfactor \sff (X, Y) - \sqrtconformalfactor \ambientmetric (X, Y) d\conformalexponent \cdot \nor.
+\end{align*}
+
+Taking the trace with respect to \(\dualmetric\) gives the conformal mean curvature,
+\[
+\conformalmeancurv = \inversesqrtconformalfactor \meancurv - \inversesqrtconformalfactor d\conformalexponent \cdot \nor = \inversesqrtconformalfactor \meancurv - d\conformalexponent \cdot \conformalnor.
+\]
 
 * Solitons
 * Notes 							   :noexport:
