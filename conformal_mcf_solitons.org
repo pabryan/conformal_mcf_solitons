@@ -1,0 +1,39 @@
+#+TITLE: Conformal Solitons for the Mean Curvature Flow
+#+AUTHOR: Paul Bryan and Mu-Tao Wang
+#+SETUPFILE: ~/.emacs.d/org-templates/bibliography.org
+#+OPTIONS: toc:nil
+
+# ***  Class
+#+LATEX_CLASS: amsart
+
+# *** Macros
+#+LATEX_HEADER: \input{local_definitions}
+
+# *** For bundling
+#+LATEX_HEADER: \usepackage{snapshot}
+
+# *** Author
+#+LATEX_HEADER: \address{Department of Mathematics, University of California San Diego}
+#+LATEX_HEADER: \email{pbryan@ucsd.edu}
+#+LATEX_HEADER: \address{Department of Mathematics, Columbia University}
+#+LATEX_HEADER: \email{mtwang@math.columbia.edu}
+
+# *** Metadata
+#+LaTeX_HEADER: \keywords{Mean Curvature Flow, Solitons, Conformal Geometry}
+#+LATEX_HEADER: \subjclass[2010]{}
+
+# *** Other formatting settings
+#+LATEX_HEADER: \date{}
+
+
+* Introduction
+* Notation and Preliminaries
+* Solitons
+* Notes 							   :noexport:
+** Comments from Ben
+1. Is $n_\delta$ the choice with negative $z$-component?
+2. Make more rigorous what is meant by $z$-coord. of $\alpha$ is $\geq z$-coord. of $\beta$. E.g., what points on alpha correspond to what points on beta? One way might be to take the intersection of S^2, P, and span{n,(0,0,1)} as the north and south poles and use the great circles passing through them in S^2_+.
+3. Lemma 0.2: $\gamma_+ \geq R(\gamma_-)$ (abbreviated)?
+4. Define $\alpha > \beta$ to be strictly greater in the interior of S^2_+ and at the boundary (assume equal there) the angle is positive.
+5. Conclusion of Lemma 0.3 is > instead of geq.
+
