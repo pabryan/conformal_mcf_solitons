@@ -81,7 +81,6 @@ In particular, if a MCF-soliton satisfies the initial condition
 \end{equation}
 and it seems natural to ask whether the Mean Curvature flow with initial condition \(\initial{\submanifold}\) satisfying \eqref{eq:initial_mcf-soliton} is an MCF-soliton. In general the answer is no. 
 
-
 * Notation and Preliminaries
 
 Let \(\ambient\) be a Riemannian manifold with Levi-Civita connection \(\ambientconx\), and let \(\conformalmap: \ambientspace \to \ambientspace\) a conformal diffeomorphism with
@@ -119,22 +118,64 @@ Letting \(\nor\) be the unit normal vector to \(M\) with respect to \(\ambientme
 \]
 so that \(\nor\) is normal to \(M\) with respect to \(\ambientconformalmetric\). It's length however is now \(\sqrtconformalfactor\) so that
 the conformal unit normal is
-\[
+\begin{equation}
+\label{eq:conformalnor}
 \conformalnor = \inversesqrtconformalfactor \nor.
-\]
+\end{equation}
 This allows us to calculate the second fundamental form,
-\begin{align*}
+\begin{align}
+\label{eq:conformalsff}
 \conformalsff (X, Y) &= \ambientconformalmetric(\conformalconx_X Y, \conformalnor) = \conformalfactor \ambientmetric (\ambientconx_X Y + X(\conformalexponent) Y + Y(\conformalexponent) X - \ambientmetric(X, Y) \grad \conformalexponent, \inversesqrtconformalfactor \nor) \\
 &= \sqrtconformalfactor \ambientmetric (\ambientconx_X Y, \nor) - \sqrtconformalfactor \ambientmetric(X, Y) \ambientmetric (\grad \conformalexponent, \nor) \\
 &= \sqrtconformalfactor \sff (X, Y) - \sqrtconformalfactor \ambientmetric (X, Y) d\conformalexponent \cdot \nor.
-\end{align*}
+\end{align}
 
 Taking the trace with respect to \(\dualmetric\) gives the conformal mean curvature,
-\[
+\begin{equation}
+\label{eq:conformalmeancurv}
 \conformalmeancurv = \inversesqrtconformalfactor \meancurv - \inversesqrtconformalfactor d\conformalexponent \cdot \nor = \inversesqrtconformalfactor \meancurv - d\conformalexponent \cdot \conformalnor.
+\end{equation}
+
+* Conformal Solitons
+
+#+BEGIN_latex
+\renewcommand{\conformalexponent}{\mathop{\phi_{\timeparam}}}
+#+END_latex
+
+Let us begin by answering the question of whether a initial submanifold \(\initialsubmanifold\) satisfying the initial MCF-soliton equation \eqref{eq:initial_mcf-soliton} gives rise to an MCF-soliton in the particular case that \(\flow\) is a one-parameter subgroup of conformal diffeomorphisms, or equivalently that \(\ambientvectorfield\) is a conformal Killing field,
+\[
+\lie_{\ambientvectorfield} \ambientmetric = \conformalkillingfactor \ambientmetric.
+\]
+Let \(\oneparamimmersions (x) = \flow (\initialimmersion(x))\). Then \(\initialsubmanifold\) is the initial submanifold of a MCF-soliton if and only if \eqref{eq:mcf-soliton} holds, which the reader will recall states that
+\[
+\ip{\ambientvectorfield}{\nor} = -\timefactor(\timeparam) \meancurv.
 \]
 
-* Solitons
+Pulling back by the conformal diffeomorphism, \(\flow\), equivalently we need to show that
+\[
+\conformalfactor \ip{\ambientvectorfield_{\timeparam}}{\conformal{\nor}_{\timeparam}} = -\timefactor \conformal{\meancurv}_{\timeparam}
+\]
+where \(\ambientvectorfield_{\timeparam} = \pushforward{\flow}^{-1} \ambientvectorfield\) and from equations \eqref{eq:conformalnor} and \eqref{eq:conformalmeancurv} we have
+\[
+\conformal{\meancurv}_{\timeparam} = \inversesqrtconformalfactor \initial{\meancurv} - \inversesqrtconformalfactor d\conformalexponent \cdot \initial{\nor},
+\]
+and
+\[
+\conformal{\nor}_{\timeparam} = \inversesqrtconformalfactor \initial{\nor}.
+\]
+
+Thus we may rewrite equation \eqref{eq:mcf-soliton} as
+\[
+\conformalfactor \ip{\ambientvectorfield_{\timeparam}}{\initial{\nor}} = - \timefactor \initial{\meancurv} + \timefactor d\conformalexponent \cdot \initial{\nor}.
+\]
+
+#+BEGIN_eg
+Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic expansion. Then \(\flow(y) = e^{-\timeparam} y\) and \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\). Moreover \(\ambientvectorfield_{\timeparam} = \ambientvectorfield\). Therefore, equation \eqref{eq:mcf-soliton} becomes
+\[
+e^{2\timeparam} \ip{\ambientvectorfield}{\initial{\nor}} = - \timefactor \initial{\meancurv}.
+\]
+By the assumption in equation \eqref{eq:initial_mcf-soliton},  \(\ip{\ambientvectorfield}{\initial{\nor}} = - \initial{\timefactor} \initial{\meancurv}\) so that we just have to define \(\timefactor(\timeparam) = -\initial{\timefactor} e^{2\timeparam}\) to obtain a MCF-soliton.
+#+END_eg
 * Notes 							   :noexport:
 ** Comments from Ben
 1. Is $n_\delta$ the choice with negative $z$-component?
