@@ -28,7 +28,7 @@
 
 * Introduction
 
-Let \(\oneparamimmersions: \submanifold \to \ambientspace\) be a smooth, one parameter family of immersions, and write \(\oneparamsubmanifold = \oneparamimmersions(\submanifold\). Also let \(\velocityvector = \pd{t} \oneparamimmersions = \pushforward{\oneparamimmersions} \partial_t\) denote the velocity vector.
+Let \(\oneparamimmersions: \submanifold \to \ambientspace\) be a smooth, one parameter family of immersions, and write \(\oneparamsubmanifold = \oneparamimmersions(\submanifold)\). Also let \(\velocityvector = \pd{t} \oneparamimmersions = \pushforward{\oneparamimmersions} \partial_t\) denote the velocity vector.
 
 #+BEGIN_defn
 We say \(\oneparamsubmanifold\) evolves by the Mean Curvature Flow if there exists a one-parameter family of diffeomorphisms \(\oneparamdiffeo: \submanifold \to \submanifold\) and a change of time parameter \(\timeparam = \timeparam(\changedtime)\) such that
@@ -49,7 +49,7 @@ We will call \(\changedoneparamimmersions\) the Mean Curvature Flow parametrisat
 Similarly, given a vector field \(\ambientvectorfield\) on \(\ambientspace\), we may define a \(\ambientvectorfield\)-soliton.
 
 #+BEGIN_defn
-A \(\ambientvectorfield\)-soliton is a one parameter family of immersed sub-manifold \(\oneparamsubmanifold\) such that there exists a one-parameter family of diffeomorphisms \(\oneparamdiffeo: \submanifold \to \submanifold\) and a change of time parameter \(\time = \time(\changedtime)\) such that
+A \(\ambientvectorfield\)-soliton is a one parameter family of immersed sub-manifolds \(\oneparamsubmanifold\), such that there exists a one-parameter family of diffeomorphisms \(\oneparamdiffeo: \submanifold \to \submanifold\) and a change of time parameter \(\time = \time(\changedtime)\) such that
 \[
 \changedoneparamimmersions (x) = \oneparamimmersions[\changedtime] (\oneparamdiffeo(x))
 \]
@@ -67,14 +67,20 @@ Equivalently,
 \]
 #+END_defn
 
-The change of time parameter, corresponding to the factor \(\timefactor\) is there to allow us to define a Mean Curvature Flow Soliton (MCF-soliton) as a one parameter family of immersed sub-manifolds that is simultaneously a solution of the Mean Curvature Flow and a \(\ambientvectorfield\)-soliton as defined above. In other words, a MCF-soliton has a Mean Curvature Flow parametrisation satisfying
+The necessity of the one-parameter family of diffeomorhisms just says that the flow is geometric; it is independent of any parameterisation. The change of time parameter, corresponding to the factor \(\timefactor\) is there to allow us to define a Mean Curvature Flow Soliton (MCF-soliton) as a one parameter family of immersed sub-manifolds that is simultaneously a solution of the Mean Curvature Flow and a \(\ambientvectorfield\)-soliton as defined above. 
+
+#+BEGIN_defn
+An MCF-soliton has a Mean Curvature Flow parametrisation satisfying
 \begin{equation}
 \label{eq:mcf-soliton}
 \ip{\ambientvectorfield}{\nor} = -\timefactor(\timeparam) \meancurv
 \end{equation}
-for some function \(\timefactor: \RR \to \RR\). This says that \(\oneparamsubmanifold\) moves along the integral curves of \(\ambientvectorfield\), with not necessarily unit-speed, though at each time, the speed is constant over \(\oneparamsubmanifold\). Equivalently if \(\oneparamsubmanifold\) moves along the integral curves of \(\ambientvectorfield\), i.e. \(\oneparamimmersions(x) = \flow (\initialimmersion(x))\) for \(\flow\) the flow of \(\ambientvectorfield\), and satisfies equation \eqref{eq:mcf-soliton}, then \(\oneparamsubmanifold\) is an MCF-soliton.
+for some function \(\timefactor: \RR \to \RR\). T
+#+END_defn
+The definition says that \(\oneparamsubmanifold\) is a solution of the Mean Curvature Flow, while simultaneously moving along the integral curves of \(\ambientvectorfield\) (with not necessarily unit-speed, though at each time, the speed is constant over \(\oneparamsubmanifold\)). Equivalently if \(\oneparamsubmanifold\) moves along the integral curves of \(\ambientvectorfield\), i.e. \(\oneparamimmersions(x) = \flow (\initialimmersion(x))\) for \(\flow\) the flow of \(\ambientvectorfield\), and satisfies equation \eqref{eq:mcf-soliton}, then \(\oneparamsubmanifold\) is an MCF-soliton.
 
-In particular, if a MCF-soliton satisfies the initial condition
+
+In particular, an MCF-soliton satisfies the initial condition
 \begin{equation}
 \label{eq:initial_mcf-soliton}
 \ip{\ambientvectorfield(\initialimmersion)}{\initial{\nor}} = -\initial{\timefactor} \initial{\meancurv},
