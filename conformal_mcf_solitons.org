@@ -190,11 +190,34 @@ Thus we may rewrite equation \eqref{eq:mcf-soliton} as
 which we refer to as the /conformal-mcf-soliton equation/.
 
 #+BEGIN_eg
-Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic expansion with \(\flow(y) = e^{-\timeparam} y\). The exponent \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\) and \(\ambientvectorfield_{\timeparam} = \ambientvectorfield\). Therefore, equation \eqref{eq:mcf-soliton} becomes
+Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic contraction with \(\flow(y) = e^{-\timeparam} y\). Thus our \(\ambientvectorfield\)-parametrisation is
 \[
-e^{2\timeparam} \ip{\ambientvectorfield}{\initial{\nor}} = - \timefactor(t) \initial{\meancurv}.
+\oneparamimmersions (x) = e^{-t} \initialimmersion(x).
 \]
-If $M_0$ satisfies the initial assumption in equation \eqref{eq:initial_mcf-soliton}, then \(\ip{\ambientvectorfield}{\initial{\nor}} = - \initial{\timefactor} \initial{\meancurv}\) so that we just have to define \(\timefactor(\timeparam) = -\initial{\timefactor} e^{2\timeparam}\) to obtain an MCF-soliton.
+The exponent \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\) so that \(d\conformalexponent \cdot \initial{\nor} = 0\). The differential \(d\flow \cdot Z = e^{-t} Z\) for any tangent vector, and so \((d\flow \cdot \ambientvectorfield)|_x = e^{-t} \ambientvectorfield(x) = \ambientvectorfield(\flow(x))\). In other words, \(\ambientvectorfield_{\timeparam}(y) = \ambientvectorfield(y) = -y\). Therefore, the conformal-mcf-soliton equation \eqref{eq:conformal-mcf-soliton} with initial condition \(\initialimmersion\) is
+#+BEGIN_latex
+\[
+\begin{cases}
+e^{-2\timeparam} \ip{\initialimmersion(x)}{\initial{\nor}} &= \timefactor(t) \initial{\meancurv}, \\
+\ip{\initialimmersion}{\initial{\nor}} &= \initial{\timefactor} \initial{\meancurv}.
+\end{cases}
+\]
+#+END_latex
+The unique solution of this problem is easily obtained defining \(\timefactor(\timeparam) = \initial{\timefactor} e^{-2\timeparam}\) to obtain an MCF-soliton for any initial \(\initialimmersion\) satisfying \(\ip{\initialimmersion}{\initial{\nor}} = \initial{\timefactor} \initial{\meancurv}\) with \(\initial{\timefactor}\) an arbitrary constant. The MCF-parametrisation is obtained first by solving
+#+BEGIN_latex
+\begin{align*}
+\partial_{\changedtime} \timeparam &= \exp (-2\timeparam(\changedtime)) \\
+d\oneparamimmersions \cdot \partial_{\timeparam} \oneparamdiffeo &= - \tangpart{\oneparamimmersions}.
+\end{align*}
+#+END_latex
+Then
+\[
+\changedoneparamimmersions(x) = \oneparamimmersions[\tfrac{1}{2} \ln 2 \tau](\oneparamdiffeo[\tfrac{1}{2} \ln 2 \tau](x))) = \frac{1}{\sqrt{2\changedtime}} \initialimmersion(\oneparamdiffeo[\tfrac{1}{2} \ln 2 \tau](x))
+\]
+is an MCF-parametrisation where \(\oneparamdiffeo\) solves
+\[
+\partial_t \oneparamdiffeo = - d\oneparamimmersions^{-1} \cdot \tangpart{\oneparamimmersions}.
+\]
 #+END_eg
 * Notes 							   :noexport:
 ** Comments from Ben
