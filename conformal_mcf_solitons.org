@@ -33,7 +33,7 @@ Let \(\oneparamimmersions: \submanifold \to \ambientspace\) be a smooth, one par
 #+BEGIN_defn
 We say \(\oneparamsubmanifold\) evolves by the Mean Curvature Flow if there exists a one-parameter family of diffeomorphisms \(\oneparamdiffeo: \submanifold \to \submanifold\) and a change of time parameter \(\timeparam = \timeparam(\changedtime)\) such that
 \[
-\changedoneparamimmersions (x) = \oneparamimmersions[\changedtime] (\oneparamdiffeo(x))
+\changedoneparamimmersions (x) = \oneparamimmersions[\changedtime] (\oneparamdiffeo[\timeparam(\changedtime)](x))
 \]
 satisfies
 \[
@@ -49,9 +49,9 @@ We will call \(\changedoneparamimmersions\) the Mean Curvature Flow parametrisat
 Similarly, given a vector field \(\ambientvectorfield\) on \(\ambientspace\), we may define a \(\ambientvectorfield\)-soliton.
 
 #+BEGIN_defn
-A \(\ambientvectorfield\)-soliton is a one parameter family of immersed sub-manifolds \(\oneparamsubmanifold\), such that there exists a one-parameter family of diffeomorphisms \(\oneparamdiffeo: \submanifold \to \submanifold\) and a change of time parameter \(\time = \time(\changedtime)\) such that
+A \(\ambientvectorfield\)-soliton is a one parameter family of immersed sub-manifolds \(\oneparamsubmanifold\), such that there exists a one-parameter family of diffeomorphisms \(\oneparamdiffeo: \submanifold \to \submanifold\) and a change of time parameter \(\timeparam = \timeparam(\changedtime)\) such that
 \[
-\changedoneparamimmersions (x) = \oneparamimmersions[\changedtime] (\oneparamdiffeo(x))
+\changedoneparamimmersions (x) = \oneparamimmersions[\changedtime] (\oneparamdiffeo[\timeparam(\changedtime)](x))
 \]
 satisfies
 \[
@@ -65,9 +65,10 @@ Equivalently,
 \[
 \ip{\velocityvector}{\nor} = \timefactor(\timeparam) \ambientvectorfield.
 \]
+We will call \(\changedoneparamimmersions\) the $\ambientvectorfield$-soliton parametrisation.
 #+END_defn
 
-The necessity of the one-parameter family of diffeomorhisms just says that the flow is geometric; it is independent of any parameterisation. The change of time parameter, corresponding to the factor \(\timefactor\) is there to allow us to define a Mean Curvature Flow Soliton (MCF-soliton) as a one parameter family of immersed sub-manifolds that is simultaneously a solution of the Mean Curvature Flow and a \(\ambientvectorfield\)-soliton as defined above. 
+In both definitions, we note that we are interested in geometric flows - namely those dependent on the image $M_t$, independent of any chosen parametrisation. Thus only the normal speed is relevant and accounts for the one-parameter family of diffeomorphisms which is just a reparametrisation at each time and only adds a tangential component to the speed. The change of time parameter, corresponding to the factor \(\timefactor\) is there to allow us to define a Mean Curvature Flow Soliton (MCF-soliton) as a one parameter family of immersed sub-manifolds that is simultaneously a solution of the Mean Curvature Flow and a \(\ambientvectorfield\)-soliton as defined above.
 
 #+BEGIN_defn
 An MCF-soliton has a Mean Curvature Flow parametrisation satisfying
@@ -75,17 +76,32 @@ An MCF-soliton has a Mean Curvature Flow parametrisation satisfying
 \label{eq:mcf-soliton}
 \ip{\ambientvectorfield}{\nor} = -\timefactor(\timeparam) \meancurv
 \end{equation}
-for some function \(\timefactor: \RR \to \RR\). T
+for some function \(\timefactor: \RR \to \RR\).
 #+END_defn
-The definition says that \(\oneparamsubmanifold\) is a solution of the Mean Curvature Flow, while simultaneously moving along the integral curves of \(\ambientvectorfield\) (with not necessarily unit-speed, though at each time, the speed is constant over \(\oneparamsubmanifold\)). Equivalently if \(\oneparamsubmanifold\) moves along the integral curves of \(\ambientvectorfield\), i.e. \(\oneparamimmersions(x) = \flow (\initialimmersion(x))\) for \(\flow\) the flow of \(\ambientvectorfield\), and satisfies equation \eqref{eq:mcf-soliton}, then \(\oneparamsubmanifold\) is an MCF-soliton.
+The definition says that \(\oneparamsubmanifold\) is a solution of the Mean Curvature Flow, while simultaneously moving along the integral curves of \(\ambientvectorfield\) (with not necessarily unit-speed, though at each fixed time, the speed is constant over \(\oneparamsubmanifold\)). Equivalently if \(\oneparamsubmanifold\) moves along the integral curves of \(\ambientvectorfield\), i.e. \(\oneparamimmersions(x) = \flow (\initialimmersion(x))\) for \(\flow\) the flow of \(\ambientvectorfield\), and satisfies equation \eqref{eq:mcf-soliton}, then \(\oneparamsubmanifold\) is an MCF-soliton.
 
+To go back and forth between the MCF-parametrisation and the \(\ambientvectorfield\)-parametrisation, suppose we have an MCF-parametrisation satisfying \eqref{eq:mcf-soliton}. Then we solve \(\pd[\timeparam]{\changedtime} = c (\timeparam(\changedtime))\) for \(\timeparam(\changedtime)\) and \(d\oneparamimmersions \cdot \partial_{\changedtime} \oneparamdiffeo[\changedtime] = \tangpart{\ambientvectorfield}\) for \(\oneparamdiffeo[\changedtime]\) where \(\tangpart{\ambientvectorfield}\) denotes the tangential component of \(\ambientvectorfield\). Defining \(\changedoneparamimmersions(x) = \oneparamimmersions(\oneparamdiffeo[\changedtime](x))\) yields
+#+BEGIN_latex
+\[
+\begin{split}
+\changed{\velocityvector} &= \partial_{\changedtime} \timeparam \velocityvector + d\oneparamimmersions \cdot \partial_{\changedtime} \oneparamdiffeo[\changedtime] \\
+&= c \velocityvector + \tangpart{\ambientvectorfield} \\
+&= \ip{\ambientvectorfield}{\nor} \nor + \tangpart{\ambientvectorfield} = \ambientvectorfield
+\end{split}
+\]
+#+END_latex
+since \(\velocityvector = - H\nor\) and \(\ip{\ambientvectorfield}{\nor} = -c \meancurv\). Thus \(\changedoneparamimmersions(x)\) is an \(\ambientvectorfield\)-parametrisation.
 
-In particular, an MCF-soliton satisfies the initial condition
+Going from an \(\ambientvectorfield\)-parametrisation to an MCF-parametrisation follows a similar procedure except this time we solve \(\partial_{\changedtime} \timeparam = c^{-1} (\timeparam(\changedtime))\) and \(d\oneparamimmersions \cdot \partial_{\timeparam} \oneparamdiffeo = - \tangpart{\ambientvectorfield}\) to find that \(\changedoneparamimmersions(x) = \oneparamimmersions(\oneparamdiffeo(x)\) is an MCF-parametrisation.
+
+A natural question to ask is whether MCF-solitons exist for a given \(\ambientvectorfield\). A necessary condition is that \(M_0\) satisfies,
 \begin{equation}
 \label{eq:initial_mcf-soliton}
-\ip{\ambientvectorfield(\initialimmersion)}{\initial{\nor}} = -\initial{\timefactor} \initial{\meancurv},
+\ip{\ambientvectorfield(\initialimmersion)}{\initial{\nor}} = -\initial{\timefactor} \initial{\meancurv}.
 \end{equation}
-and it seems natural to ask whether the Mean Curvature flow with initial condition \(\initial{\submanifold}\) satisfying \eqref{eq:initial_mcf-soliton} is an MCF-soliton. In general the answer is no. 
+For such \(M_0\), the MCF is uniquely determined, and so we must ask if this flow is also an \(\ambientvectorfield\)-soliton. In general the answer is no since a MCF-soliton simultaneously satisfies two differential equations, which is an over-determined system. Thus we need some /integrability condition/. We will discuss some possibilities below.
+
+Sometimes it will be more convenient to use one or the other parametrisation and we will be sure to state clearly which parametrisation we are working with.
 
 * Notation and Preliminaries
 
@@ -97,7 +113,7 @@ We want to compare the geometry of \(\ambient\) with \((\conformalmap(\ambientsp
 
 The dual conformal metric is
 \[
-\dualambientconformalmetric = \inverseconformalfactor \dualambientmetric.
+\dualambientconformalmetric = \dualconformalfactor \dualambientmetric.
 \]
 The conformal Levi-Civita connection is
 \[
@@ -109,7 +125,7 @@ Now let \(\submanifold \subset \ambientspace\) be an submanifold. We want to com
 
 Then we have
 \[
-\conformalmetric = \conformalfactor \metric, \quad \dualconformalmetric = \conformalfactor \dualmetric.
+\conformalmetric = \conformalfactor \metric, \quad \dualconformalmetric = \dualconformalfactor \dualmetric.
 \]
 
 For the connection, let \(X,Y\) be tangent to \(M\) and then taking the tangential component of \(\ambientconformalconx_X Y\) gives,
@@ -126,12 +142,12 @@ so that \(\nor\) is normal to \(M\) with respect to \(\ambientconformalmetric\).
 the conformal unit normal is
 \begin{equation}
 \label{eq:conformalnor}
-\conformalnor = \inversesqrtconformalfactor \nor.
+\conformalnor = \dualsqrtconformalfactor \nor.
 \end{equation}
 This allows us to calculate the second fundamental form,
 \begin{align}
 \label{eq:conformalsff}
-\conformalsff (X, Y) &= \ambientconformalmetric(\conformalconx_X Y, \conformalnor) = \conformalfactor \ambientmetric (\ambientconx_X Y + X(\conformalexponent) Y + Y(\conformalexponent) X - \ambientmetric(X, Y) \grad \conformalexponent, \inversesqrtconformalfactor \nor) \\
+\conformalsff (X, Y) &= \ambientconformalmetric(\conformalconx_X Y, \conformalnor) = \conformalfactor \ambientmetric (\ambientconx_X Y + X(\conformalexponent) Y + Y(\conformalexponent) X - \ambientmetric(X, Y) \grad \conformalexponent, \dualsqrtconformalfactor \nor) \\
 &= \sqrtconformalfactor \ambientmetric (\ambientconx_X Y, \nor) - \sqrtconformalfactor \ambientmetric(X, Y) \ambientmetric (\grad \conformalexponent, \nor) \\
 &= \sqrtconformalfactor \sff (X, Y) - \sqrtconformalfactor \ambientmetric (X, Y) d\conformalexponent \cdot \nor.
 \end{align}
@@ -139,7 +155,7 @@ This allows us to calculate the second fundamental form,
 Taking the trace with respect to \(\dualmetric\) gives the conformal mean curvature,
 \begin{equation}
 \label{eq:conformalmeancurv}
-\conformalmeancurv = \inversesqrtconformalfactor \meancurv - \inversesqrtconformalfactor d\conformalexponent \cdot \nor = \inversesqrtconformalfactor \meancurv - d\conformalexponent \cdot \conformalnor.
+\conformalmeancurv = \dualsqrtconformalfactor \meancurv - \dualsqrtconformalfactor d\conformalexponent \cdot \nor = \dualsqrtconformalfactor \meancurv + d\conformalexponent \cdot \conformalnor.
 \end{equation}
 
 * Conformal Solitons
@@ -163,11 +179,7 @@ Pulling back by the conformal diffeomorphism, \(\flow\), equivalently we need to
 \]
 where \(\ambientvectorfield_{\timeparam} = \pushforward{\flow}^{-1} \ambientvectorfield\) and from equations \eqref{eq:conformalnor} and \eqref{eq:conformalmeancurv} we have
 \[
-\conformal{\meancurv}_{\timeparam} = \inversesqrtconformalfactor \initial{\meancurv} - \inversesqrtconformalfactor d\conformalexponent \cdot \initial{\nor},
-\]
-and
-\[
-\conformal{\nor}_{\timeparam} = \inversesqrtconformalfactor \initial{\nor}.
+\conformal{\meancurv}_{\timeparam} = \dualsqrtconformalfactor \initial{\meancurv} - \dualsqrtconformalfactor d\conformalexponent \cdot \initial{\nor}, \quad \conformal{\nor}_{\timeparam} = \dualsqrtconformalfactor \initial{\nor}.
 \]
 
 Thus we may rewrite equation \eqref{eq:mcf-soliton} as
@@ -176,11 +188,11 @@ Thus we may rewrite equation \eqref{eq:mcf-soliton} as
 \]
 
 #+BEGIN_eg
-Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic expansion. Then \(\flow(y) = e^{-\timeparam} y\) and \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\). Moreover \(\ambientvectorfield_{\timeparam} = \ambientvectorfield\). Therefore, equation \eqref{eq:mcf-soliton} becomes
+Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic expansion with \(\flow(y) = e^{-\timeparam} y\). The exponent \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\) and \(\ambientvectorfield_{\timeparam} = \ambientvectorfield\). Therefore, equation \eqref{eq:mcf-soliton} becomes
 \[
-e^{2\timeparam} \ip{\ambientvectorfield}{\initial{\nor}} = - \timefactor \initial{\meancurv}.
+e^{2\timeparam} \ip{\ambientvectorfield}{\initial{\nor}} = - \timefactor(t) \initial{\meancurv}.
 \]
-By the assumption in equation \eqref{eq:initial_mcf-soliton},  \(\ip{\ambientvectorfield}{\initial{\nor}} = - \initial{\timefactor} \initial{\meancurv}\) so that we just have to define \(\timefactor(\timeparam) = -\initial{\timefactor} e^{2\timeparam}\) to obtain a MCF-soliton.
+If $M_0$ satisfies the initial assumption in equation \eqref{eq:initial_mcf-soliton}, then \(\ip{\ambientvectorfield}{\initial{\nor}} = - \initial{\timefactor} \initial{\meancurv}\) so that we just have to define \(\timefactor(\timeparam) = -\initial{\timefactor} e^{2\timeparam}\) to obtain an MCF-soliton.
 #+END_eg
 * Notes 							   :noexport:
 ** Comments from Ben
