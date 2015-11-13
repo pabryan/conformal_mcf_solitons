@@ -10,8 +10,8 @@
 \DeclareMathOperator{\conformalexponent}{\phi}
 \DeclareMathOperator{\conformalfactor}{e^{2\conformalexponent}}
 \DeclareMathOperator{\sqrtconformalfactor}{e^{\conformalexponent}}
-\DeclareMathOperator{\inverseconformalfactor}{e^{-2\conformalexponent}}
-\DeclareMathOperator{\inversesqrtconformalfactor}{e^{-\conformalexponent}}
+\DeclareMathOperator{\dualconformalfactor}{e^{-2\conformalexponent}}
+\DeclareMathOperator{\dualsqrtconformalfactor}{e^{-\conformalexponent}}
 \DeclareMathOperator{\conformalgrad}{\conformal{\grad}}
 \DeclareMathOperator{\conformalkillingfactor}{\Omega}
 
@@ -36,7 +36,7 @@
 \DeclareMathOperator{\initialimmersion}{\initial{\immersion}}
 \DeclareMathOperator{\initialsubmanifold}{\initial{\submanifold}}
 
-\DeclareMathOperator{\oneparamdiffeo}{\phi_{\timeparam}}
+\newcommand{\oneparamdiffeo}[1][\timeparam]{\phi_{{#1}}}
 \DeclareMathOperator{\changedtime}{\tau}
 \newcommand{\changed}[1]{\tilde{#1}}
 \DeclareMathOperator{\changedoneparamimmersions}{\changed{\oneparamimmersions[\changedtime]}}
