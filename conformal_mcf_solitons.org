@@ -92,7 +92,7 @@ To go back and forth between the MCF-parametrisation and the \(\ambientvectorfie
 #+END_latex
 since \(\velocityvector = - H\nor\) and \(\ip{\ambientvectorfield}{\nor} = -c \meancurv\). Thus \(\changedoneparamimmersions(x)\) is an \(\ambientvectorfield\)-parametrisation.
 
-Going from an \(\ambientvectorfield\)-parametrisation to an MCF-parametrisation follows a similar procedure except this time we solve \(\partial_{\changedtime} \timeparam = c^{-1} (\timeparam(\changedtime))\) and \(d\oneparamimmersions \cdot \partial_{\timeparam} \oneparamdiffeo = - \tangpart{\ambientvectorfield}\) to find that \(\changedoneparamimmersions(x) = \oneparamimmersions(\oneparamdiffeo(x)\) is an MCF-parametrisation.
+Going from an \(\ambientvectorfield\)-parametrisation to an MCF-parametrisation follows a similar procedure except this time we solve \(\partial_{\changedtime} \timeparam = \timefactor^{-1} (\timeparam(\changedtime))\) and \(d\oneparamimmersions \cdot \partial_{\timeparam} \oneparamdiffeo = - \tangpart{\ambientvectorfield}\) to find that \(\changedoneparamimmersions(x) = \oneparamimmersions(\oneparamdiffeo(x))\) is an MCF-parametrisation.
 
 A natural question to ask is whether MCF-solitons exist for a given \(\ambientvectorfield\). A necessary condition is that \(M_0\) satisfies,
 \begin{equation}
