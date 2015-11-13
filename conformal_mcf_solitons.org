@@ -168,14 +168,14 @@ Let us begin by answering the question of whether a initial submanifold \(\initi
 \[
 \lie_{\ambientvectorfield} \ambientmetric = \conformalkillingfactor \ambientmetric.
 \]
-Let \(\oneparamimmersions (x) = \flow (\initialimmersion(x))\). Then \(\initialsubmanifold\) is the initial submanifold of a MCF-soliton if and only if \eqref{eq:mcf-soliton} holds, which the reader will recall states that
+We find it most convenient to work with the \(\ambientvectorfield\)-parametrisation, and to this end, let \(\oneparamimmersions (x) = \flow (\initialimmersion(x))\). Then \(\initialsubmanifold\) is the initial submanifold of a MCF-soliton if and only if \eqref{eq:mcf-soliton} holds, which the reader will recall states that
 \[
 \ip{\ambientvectorfield}{\nor} = -\timefactor(\timeparam) \meancurv.
 \]
 
 Pulling back by the conformal diffeomorphism, \(\flow\), equivalently we need to show that
 \[
-\conformalfactor \ip{\ambientvectorfield_{\timeparam}}{\conformal{\nor}_{\timeparam}} = -\timefactor \conformal{\meancurv}_{\timeparam}
+\conformalfactor \ip{\ambientvectorfield_{\timeparam}}{\conformal{\nor}_{\timeparam}} = -\timefactor(t) \conformal{\meancurv}_{\timeparam}
 \]
 where \(\ambientvectorfield_{\timeparam} = \pushforward{\flow}^{-1} \ambientvectorfield\) and from equations \eqref{eq:conformalnor} and \eqref{eq:conformalmeancurv} we have
 \[
@@ -183,9 +183,11 @@ where \(\ambientvectorfield_{\timeparam} = \pushforward{\flow}^{-1} \ambientvect
 \]
 
 Thus we may rewrite equation \eqref{eq:mcf-soliton} as
-\[
-\conformalfactor \ip{\ambientvectorfield_{\timeparam}}{\initial{\nor}} = - \timefactor \initial{\meancurv} + \timefactor d\conformalexponent \cdot \initial{\nor}.
-\]
+\begin{equation}
+\label{eq:conformal-mcf-soliton}
+\conformalfactor \ip{\ambientvectorfield_{\timeparam}}{\initial{\nor}} = - \timefactor(t) \initial{\meancurv} + \timefactor(t) d\conformalexponent \cdot \initial{\nor},
+\end{equation}
+which we refer to as the /conformal-mcf-soliton equation/.
 
 #+BEGIN_eg
 Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic expansion with \(\flow(y) = e^{-\timeparam} y\). The exponent \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\) and \(\ambientvectorfield_{\timeparam} = \ambientvectorfield\). Therefore, equation \eqref{eq:mcf-soliton} becomes
