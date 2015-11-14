@@ -190,11 +190,11 @@ Thus we may rewrite equation \eqref{eq:mcf-soliton} as
 which we refer to as the /conformal-mcf-soliton equation/.
 
 #+BEGIN_eg
-Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic contraction with \(\flow(y) = e^{-\timeparam} y\). Thus our \(\ambientvectorfield\)-parametrisation is
+Let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and \(\ambientvectorfield(y) = -y\) be the (inward pointing) position vector field. This is the conformal vector field corresponding to homothetic contraction with \(\flow(y) = e^{-\timeparam} y\). The differential \(d\flow \cdot Z = e^{-t} Z\) and so \(\pullback{\flow} \ip{\cdot}{\cdot} = e^{-2\timeparam} \ip{\cdot}{\cdot}\). Thus our \(\ambientvectorfield\)-parametrisation is
 \[
 \oneparamimmersions (x) = e^{-t} \initialimmersion(x).
 \]
-The exponent \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\) so that \(d\conformalexponent \cdot \initial{\nor} = 0\). The differential \(d\flow \cdot Z = e^{-t} Z\) for any tangent vector, and so \((d\flow \cdot \ambientvectorfield)|_x = e^{-t} \ambientvectorfield(x) = \ambientvectorfield(\flow(x))\). In other words, \(\ambientvectorfield_{\timeparam}(y) = \ambientvectorfield(y) = -y\). Therefore, the conformal-mcf-soliton equation \eqref{eq:conformal-mcf-soliton} with initial condition \(\initialimmersion\) is
+The exponent \(\conformalexponent = -\timeparam\) is independent of \(y \in \RR^{n+1}\) so that \(d\conformalexponent \cdot \initial{\nor} = 0\). Applying \(d\flow\) to \(\ambientvectorfield\) gives \((d\flow \cdot \ambientvectorfield)|_x = e^{-t} \ambientvectorfield(x) = \ambientvectorfield(\flow(x))\). In other words, \(\ambientvectorfield_{\timeparam}(y) = \ambientvectorfield(y) = -y\). Therefore, the conformal-mcf-soliton equation \eqref{eq:conformal-mcf-soliton} with initial condition \(\initialimmersion\) is
 #+BEGIN_latex
 \[
 \begin{cases}
