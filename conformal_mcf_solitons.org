@@ -219,6 +219,50 @@ is an MCF-parametrisation where \(\oneparamdiffeo\) solves
 \partial_t \oneparamdiffeo = - d\oneparamimmersions^{-1} \cdot \tangpart{\oneparamimmersions}.
 \]
 #+END_eg
+
+#+BEGIN_eg
+Again, let \(\ambient = (\RR^{n+1}, \ip{\cdot}{\cdot})\) be Euclidean space with the standard metric and this time choose \(\ambientvectorfield = \ambientvectorfield_0\) be a fixed vector. Then the flow of \(\ambientvectorfield\) is \(\flow(y) = y + \timeparam\ambientvectorfield_0\) with \(\pullback{\flow} \ip{\cdot}{\cdot} = \ip{\cdot}{\cdot}\). That is, the exponent, \(\conformalexponent = 0\) and \(\ambientvectorfield\) is of course a Killing field. Our \(\ambientvectorfield\)-parametrisation is
+\[
+\oneparamimmersions (x) = \initialimmersion(x) + \timeparam\ambientvectorfield_0
+\]
+for a given initial immersion \(\initialimmersion\).
+
+Again we have \(d\conformalexponent = 0\) and \(\ambientvectorfield_{\timeparam} = \ambientvectorfield_0\). The conformal-mcf-soliton equation \eqref{eq:conformal-mcf-soliton} with initial condition \(\initialimmersion\) becomes
+#+BEGIN_latex
+\[
+\begin{cases}
+\ip{\ambientvectorfield_0}{\initial{\nor}} &= \timefactor(t) \initial{\meancurv}, \\
+\ip{\ambientvectorfield_0}{\initial{\nor}} &= \initial{\timefactor} \initial{\meancurv}.
+\end{cases}
+\]
+#+END_latex
+This time the factor \(\timefactor(t) = \initial{\timefactor}\) is constant and the \(\ambientvectorfield\) MCF-solitons are precisely those immersions given in the \(\ambientvectorfield\)-parametrisation as
+\[
+\oneparamimmersions(x) = \initialimmersion(x) + \timeparam\ambientvectorfield_0
+\]
+where \(\initialimmersion\) satisfies
+\[
+\ip{\ambientvectorfield_0}{\initial{\nor}} = \initial{\timefactor} \initial{\meancurv}
+\]
+for some \(\initial{\timefactor}\).
+
+The MCF-parametrisation is obtained first by solving
+#+BEGIN_latex
+\begin{align*}
+\partial_{\changedtime} \timeparam &= \frac{1}{\initial{\timefactor}} \\
+d\oneparamimmersions \cdot \partial_{\timeparam} \oneparamdiffeo &= - \tangpart{\oneparamimmersions}.
+\end{align*}
+#+END_latex
+Then
+\[
+\changedoneparamimmersions(x) = \oneparamimmersions[\tfrac{\changedtime}{\initial{\timefactor}}](\oneparamdiffeo[\tfrac{\changedtime}{\initial{\timefactor}}](x))) = \initialimmersion(\oneparamdiffeo[\tfrac{\changedtime}{\initial{\timefactor}}](x)) + \tfrac{\changedtime}{\initial{\timefactor}} \ambientvectorfield_0
+\]
+is an MCF-parametrisation where \(\oneparamdiffeo\) solves
+\[
+\partial_t \oneparamdiffeo = - d\oneparamimmersions^{-1} \cdot \tangpart{\ambientvectorfield_0}.
+\]
+#+END_eg
+
 * Notes 							   :noexport:
 ** Comments from Ben
 1. Is $n_\delta$ the choice with negative $z$-component?
