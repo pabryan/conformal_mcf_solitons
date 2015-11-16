@@ -205,7 +205,6 @@ Since \(\ambientmetric\) is non-degenerate, and this is true for every \(Z\) we 
 as claimed. In particular, if \(\ambientvectorfield\) is Killing, \(\nabla_{\ambientvectorfield} \ambientvectorfield = 0\) and hence the integral curves of \(\ambientvectorfield\) are geodesics.
 #+END_proof
 
-
 * Conformal Solitons
 
 #+BEGIN_latex
@@ -319,3 +318,5 @@ is an MCF-parametrisation where \(\oneparamdiffeo\) solves
 4. Define $\alpha > \beta$ to be strictly greater in the interior of S^2_+ and at the boundary (assume equal there) the angle is positive.
 5. Conclusion of Lemma 0.3 is > instead of geq.
 
+** References
+- Constant length Killing fields: http://www.pdmi.ras.ru/EIMI/2012/A100/alex_plenary/nikonorov.pdf
