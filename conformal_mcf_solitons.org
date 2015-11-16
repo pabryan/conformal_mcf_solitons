@@ -177,6 +177,35 @@ Let \(\flow\) denote the flow of \(\ambientvectorfield\).
 Suppose \(\ambientvectorfield\) is conformal Killing.
 #+END_proof
 
+#+BEGIN_prop
+Let \(\ambientvectorfield\) be a conformal Killing field with \(\lie_{\ambientvectorfield} \ambientmetric = \conformalkillingfactor \ambientmetric\). Then \(\ambientvectorfield\) has constant length if and only if
+\[
+\conx_{\ambientvectorfield} \ambientvectorfield = \conformalkillingfactor \ambientvectorfield.
+\]
+In particular, for Killing fields, \(\ambientvectorfield\) has constant length if and only if the flow of \(\ambientvectorfield\) is by geodesics.
+#+END_prop
+
+#+BEGIN_proof
+For any two vector fields, \(Y, Z\) we have
+\[
+\conformalkillingfactor \ambientmetric (Y, Z) = \left(\lie_{\ambientvectorfield} \ambientmetric\right) (Y, Z) = \ambientmetric(\nabla_Y \ambientvectorfield, Z) + \ambientmetric(Y, \nabla_Z \ambientvectorfield).
+\]
+In particular, taking \(Y = \ambientvectorfield\) we find that
+\[
+\conformalkillingfactor \ambientmetric (\ambientvectorfield, Z) = \ambientmetric(\nabla_{\ambientvectorfield} \ambientvectorfield, Z) + \ambientmetric(\ambientvectorfield, \nabla_Z \ambientvectorfield) = \ambientmetric(\nabla_{\ambientvectorfield} \ambientvectorfield, Z) + \frac{1}{2} \nabla_Z \ambientmetric(\ambientvectorfield, \ambientvectorfield).
+\]
+Therefore, \(\ambientvectorfield\) has constant length if and only if, for every vector field \(Z\),
+\[
+\ambientmetric(\conformalkillingfactor\ambientvectorfield, Z) = \ambientmetric(\nabla_{\ambientvectorfield} \ambientvectorfield, Z).
+\]
+Since \(\ambientmetric\) is non-degenerate, and this is true for every \(Z\) we must have
+\[
+\nabla_{\ambientvectorfield} \ambientvectorfield = \conformalkillingfactor\ambientvectorfield
+\]
+as claimed. In particular, if \(\ambientvectorfield\) is Killing, \(\nabla_{\ambientvectorfield} \ambientvectorfield = 0\) and hence the integral curves of \(\ambientvectorfield\) are geodesics.
+#+END_proof
+
+
 * Conformal Solitons
 
 #+BEGIN_latex
