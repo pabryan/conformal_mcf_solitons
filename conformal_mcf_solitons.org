@@ -1,5 +1,5 @@
-#+TITLE: Conformal Solitons for the Mean Curvature Flow
-#+AUTHOR: Paul Bryan and Mu-Tao Wang
+#+TITLE: Notes on Conformal Solitons for the Mean Curvature Flow
+#+AUTHOR: Paul Bryan
 #+SETUPFILE: ~/.emacs.d/org-templates/bibliography.org
 #+OPTIONS: toc:nil
 
@@ -13,10 +13,7 @@
 #+LATEX_HEADER: \usepackage{snapshot}
 
 # *** Author
-#+LATEX_HEADER: \address{Department of Mathematics, University of California San Diego}
-#+LATEX_HEADER: \email{pbryan@ucsd.edu}
-#+LATEX_HEADER: \address{Department of Mathematics, Columbia University}
-#+LATEX_HEADER: \email{mtwang@math.columbia.edu}
+#+LATEX_HEADER: \email{pabryan@gmail.com}
 
 # *** Metadata
 #+LaTeX_HEADER: \keywords{Mean Curvature Flow, Solitons, Conformal Geometry}
