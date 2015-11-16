@@ -102,6 +102,8 @@ Sometimes it will be more convenient to use one or the other parametrisation and
 
 * Notation and Preliminaries
 
+** Change in Geometry of a Conformal Transformation
+
 Let \(\ambient\) be a Riemannian manifold with Levi-Civita connection \(\ambientconx\), and let \(\conformalmap: \ambientspace \to \ambientspace\) a conformal diffeomorphism with
 \[
 \ambientconformalmetric = \pullback{\conformalmap} \ambientmetric = \conformalfactor \ambientmetric.
@@ -154,6 +156,26 @@ Taking the trace with respect to \(\dualmetric\) gives the conformal mean curvat
 \label{eq:conformalmeancurv}
 \conformalmeancurv = \dualsqrtconformalfactor \meancurv - \dualsqrtconformalfactor d\conformalexponent \cdot \nor = \dualsqrtconformalfactor \meancurv + d\conformalexponent \cdot \conformalnor.
 \end{equation}
+
+** Conformal Killing Fields
+
+#+BEGIN_defn
+The vector field, \(\ambientvectorfield\) is said to be a /conformal Killing field/ if
+\[
+\lie_{\ambientvectorfield} \ambientmetric = \conformalkillingfactor \ambientmetric
+\]
+for some smooth function \(\conformalkillingfactor \in C^{\infty} (\ambientspace)\). If \(\conformalkillingfactor \equiv 0\), then \(\ambientvectorfield\) is a /Killing field/.
+#+END_defn
+
+#+BEGIN_prop
+The vector field, \(\ambientvectorfield\) is conformal Killing field if and only if it's flow is a one parameter-subgroup of conformal diffeomorphisms. If \(\ambientvectorfield\) is a Killing field, then it's flow is by isometries.
+#+END_prop
+
+#+BEGIN_proof
+Let \(\flow\) denote the flow of \(\ambientvectorfield\).
+
+Suppose \(\ambientvectorfield\) is conformal Killing.
+#+END_proof
 
 * Conformal Solitons
 
